@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>body, p, li { line-height: 1.8 !important; }</style>
+  <style>body, p, li { line-height: 1.8 !important; }</style><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Deepthi Polagani</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="project-section container">
+  <h2>My Project Description</h2>
+
+  <section class="project-section container">
+  <div class="project">
+    <h3>1. ATM application</h3>
+    <p>A Python-based GUI application to credit, debit , withdrawl and check balance.</p>
+    <h4>Code:</h4><p><pre>#Application task-1
+#ATMapllication
+a1=10000
+a2=20000
+a3=30000
+while True:
+         c1="a"
+         c2="b"
+         c3="c"
+         p1=2023
+         p2=2024
+         p3=2025
+         cardname=input("enter the cardname:")
+         if c1==cardname:
+               print("welcome",c1)
+            elif c2==cardname:
+               print("welcome",c2)
+            elif c3==cardname:
+               print("welcome",c3)
+            password=int(input("enter your pin:"))
+            if  p1==password:
+               option=int(input('''enter your option:
+                                                   1->bal_enq
+                                                   2->withdrawl'''))
+            elif  p2==password:
+               option=int(input('''enter your option:
+                                                     1->bal_enq
+                                                     2->withdrawl'''))
+            elif  p3==password:
+               option=int(input('''enter your option:
+                                                    1->bal_enq
+                                                    2->withdrawl'''))
+                if option==1:
+                                     print("your acc bal:",a1)
+                                  elif option==2:
+                                     temp=int(input("enter the amount:"))
+                                     a1=a1-temp
+                                     print("remaining balance:",a1)
+                           else:
+                              print("invaild password")
+                   else:
+                      print("invalid card")
+</pre>           
+</p>
+  </div>
+</section>
+
+
+
+<section class="project-section container">
+  <div class="project">
+    <h3>2. Ticket Reservation System</h3>
+    <p>A Python-based GUI application to book and manage tickets using Tkinter. It stores data using SQLite and allows users to book, cancel, and view reservations.</p>
+    <h4>Code:</h4><p><pre>
+#Railway Ticket:
+#ticket:1000   gender  male >60  -60    female  >60 -60 
+#---------------------flat 30%-----------flat 50%----flat 30%
+def railway():
+    ticket=1000
+    gen=input("enter 'm' or 'f'").lower()
+    age=int(input("enter your age"))
+    print(ticket)
+    if gen=="m":
+        if age>60:
+            print("flat 30% off :",(ticket*30)/100)
+        else:
+            print("ticket price:" ,ticket)
+    if gen=="f":
+        if age>60:
+            print("flat 50% off:",(ticket*50)/100)
+        else:
+            print("flat 30% off:",(ticket*30)/100)
+railway() 
+</pre>           
+</p>
+  </div>
+  </section>
+
+
+  <section class="project-section container">
+  <div class="project">
+    <h3>3. Password Manager</h3>
+    <p>A Python application built with Tkinter and file handling that securely stores user passwords and encrypts them. Features include save, view, and update password records.</p>
+    <h4>Code:</h4><p><pre> # password manager->here every password stored 
+passwords = []
+
+def insert_password():
+    site = input("Enter website: ")
+    username = input("Enter username: ")
+    password = input("Enter password: ")
+
+    # store the site,username,password in dictionary
+    storage= {
+        "website": site,
+        "username": username,
+        "password": password
+    }
+    passwords.append(storage)
+    print("Password added successfully!\n")
+
+def show_passwords():
+    if not passwords:
+        print("No passwords saved yet.\n")
+        return
+
+    for storage in passwords:
+        print(f"Website: {storage['website']}, Username: {storage['username']}, Password: {storage['password']}")
+    print()
+
+def find_password():
+    find_site = input("Enter website to search: ").lower()
+    found = False
+
+    for storage in passwords:
+        if storage["website"].lower() == find_site:
+            print(f"Found of website :-> Website: {storage['website']}, Username: {storage['username']}, Password:{storage['password']}\n")
+            found = True
+        else:
+            print("INVALID WEBSITE TRY TO FIND WITH USERNAME")
+        if  found==False:
+             find_username=input("Enter username to search:").lower()
+             if storage["username"].lower() == find_username:
+                 print(f"Found of username :-> Website: {storage['website']}, Username: {storage['username']}, Password:{storage['password']}\n")
+                 found = True
+             else:
+                 print("INVALID USERNAME")
+    
+# here the opearations start
+while True:
+    print("Password Manager")
+    print("1. insert  Password")
+    print("2. show all Passwords")
+    print("3. find the password ")
+    print("4. Exit")
+
+    option= input("Choose an option: ")
+
+    if option == '1':
+        insert_password()
+    elif option == '2':
+        show_passwords()
+    elif option == '3':
+        find_password()
+    elif option == '4':
+        print("HAVE A NICE DAY!")
+        break
+    else:
+        print("Invalid option. Try again.\n")
+</pre></p>
+  </div>
+  </section>
+
+  <section class="project-section container">
+  <div class="project">
+    <h3>4. Contact-Based Management System</h3>
+    <p>A terminal-based Python project to store, add, and search contact records with a simple file handling approach. Helps keep track of names, numbers, and emails.</p>
+    <h4>Code:</h4><p><pre>contacts = {}
+
+def add_contact():
+    name = input("Enter Name: ").strip()
+    email = input("Enter Email: ").strip()
+    mobile = input("Enter Mobile Number: ").strip()
+
+    if name in contacts:
+        print("Contact already exists!")
+    else:
+        contacts[name] = {'email': email, 'mobile': mobile}
+        print("Contact added successfully.")
+
+def view_contacts():
+    if not contacts:
+        print("No contacts found.")
+    else:
+        print("\n--- Contact List ---")
+        for name, info in contacts.items():
+            print(f"Name: {name}, Email: {info['email']}, Mobile: {info['mobile']}")
+
+def update_contact():
+    name = input("Enter the Name of the contact to update: ").strip()
+    if name in contacts:
+        print(f"Current Email: {contacts[name]['email']}")
+        print(f"Current Mobile: {contacts[name]['mobile']}")
+        new_email = input("Enter new Email (to keep the existing gmail press enter : ")).strip()
+        new_mobile = input("Enter new Mobile (to keep the existing mobile no press enter): ").strip()
+
+        if new_email:
+            contacts[name]['email'] = new_email
+        if new_mobile:
+            contacts[name]['mobile'] = new_mobile
+
+        print("Contact updated successfully.")
+    else:
+        print("Contact not found.")
+
+def delete_contact():
+    name = input("Enter the Name of the contact to delete: ").strip()
+    if name in contacts:
+        del contacts[name]
+        print("Contact deleted successfully.")
+    else:
+        print("Contact not found.")
+
+def main():
+    while True:
+        print("\n--- Contact Management System ---")
+        print("1. Add Contact")
+        print("2. View Contacts")
+        print("3. Update Contact")
+        print("4. Delete Contact")
+        print("5. Exit")
+
+        choice = input("Enter your choice : ").strip()
+
+        if choice == '1':
+            add_contact()
+        elif choice == '2':
+            view_contacts()
+        elif choice == '3':
+            update_contact()
+        elif choice == '4':
+            delete_contact()
+        elif choice == '5':
+            print("Exiting Contact Management System.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+main()
+</pre></p>
+  </div>
+  </section>
+
+  <section class="project-section container">
+  <div class="project">
+    <h3>5. Login / Signup Form</h3>
+    <p>A frontend-only HTML/CSS/JavaScript project that includes form validation, stylish layouts, and mobile responsiveness for user authentication pages.</p>
+    <h4>Code:</h4><a href="https://deepthi242-code.github.io/login/">click this to open see my project</a>
+  </div>
+  </section>
+  <section class="project-section container">
+  
+  <div class="project">
+    <h3>6. dance website(forntend-own web)</h3>
+    <p>A team-based HTML/CSS Bootstrap project that replicates the Apple India homepage. Includes responsive design, navigation bars, and product sections.</p>
+    <h4>Code:</h4><a href="https://deepthi242-code.github.io/Dance/">click this to open see my project without responsiveness</a>
+    
+  </div>
+  </section>
+
+
+  <section class="project-section container">
+  <div class="project">
+    <h3>7. Apple Website Clone</h3>
+    <p>A team-based HTML/CSS Bootstrap project that replicates the Apple India homepage. Includes responsive design, navigation bars, and product sections.</p>
+    <h4>Code:</h4><a href="https://deepthi242-code.github.io/apple1/">click this to open see my project without responsiveness</a>
+    <h4>Code:</h4><a href="https://deepthi242-code.github.io/apple/">click this to open see my project with responsiveness</a>
+
+  </div>
+  </section>
+  <section class="project-section container">
+  <div class="project">
+    <h3>8. Personal Portfolio</h3>
+    <p>The very portfolio you're viewing now! Built using HTML, CSS, Bootstrap, and responsive design principles. Features multiple pages and animated interactions.</p>
+  </div>
+  </section>
+</section>
+<center>&copy; 2025 Deepthi Polagani. All rights reserved.</center>
+
+</body></html>
